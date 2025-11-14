@@ -1,31 +1,32 @@
 import React from 'react'
-import { GiHamburgerMenu } from "react-icons/gi";
-import { CiSearch } from "react-icons/ci";
-import { CiBellOn } from "react-icons/ci";
-import { CiCircleQuestion } from "react-icons/ci";
-import { SiBitcoinsv } from "react-icons/si";
+import { FaBitcoin } from 'react-icons/fa'
 
-const Main = () => (
- <main>
-    <header className="bg-white p-4 flex justify-evenly">
-        <button className="p-2 lg:hidden"><GiHamburgerMenu /></button>
-        <div className=''>
-        <input className="border-2 rounded" type="search" placeholder='Search type of keywords' />
-        </div>
-        <div className="flex pr-10"><CiBellOn /> <CiCircleQuestion /></div>
-        <div className="bg-gray-400 w-10 h-10 rounded-full">
-           <p className="text-gray-500 gap-x-6">Laurice <br /> @laurice22</p>
-      </div>
-    </header>
-<div>
- <div className="flex">
-    <SiBitcoinsv />
- </div>
+const Main = ({ sidebarToggle }) => {
+  return (
+   <div
+  className={`w-full p-4 transition-all duration-300 ${sidebarToggle ? "ml-0" : "ml-64"}`}
+>
+  <div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+    <div className='bg-white p-6 shadow-lg rounded-lg'>
+      <h2 className='text-xl font-bold'>
+        <FaBitcoin className='bg-amber-600 rounded-full'/>
+      </h2>
+      <p className='text-lg p-1 text-gray-600'>This is a sample card with............... Place content here</p>
+    </div>
+    <div className='bg-white p-6 shadow-lg rounded-lg'>
+      <p className='text-lg p-1 text-gray-600'>This is a sample card with............... Place content here</p>
+    </div>
+    <div className='bg-white p-6 shadow-lg rounded-lg'>
+      <p className='text-lg p-1 text-gray-600'>This is a sample card with............... Place content here</p>
+    </div>
+    <div className='bg-white p-6 shadow-lg rounded-lg'>
+      <p className='text-lg p-1 text-gray-600'>This is a sample card with............... Place content here</p>
+    </div>
+  </div>
 </div>
 
-
- </main>
-  
-);
+  );
+};
 
 export default Main;
+

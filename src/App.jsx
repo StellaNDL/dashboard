@@ -1,17 +1,24 @@
 import React from 'react'
 import "./App.css"
 import Sidebar from './components/Sidebar';
-import Main from './components/Main';
+import Dashboard from './components/Dashboard';
+import { useState } from 'react'
+import Main from './components/Main'
 
-const App = () => {
+function App () {
+  const [sidebarToggle, setSidebarToggle] = useState(false)
    return (
-    <>
-   <Sidebar />
-   <Main />
-   </>
-   );
- };
+    <div className='flex'> 
+      <Sidebar sidebarToggle={sidebarToggle}/>
+      <Dashboard 
+      sidebarToggle={sidebarToggle}
+      setSidebarToggle={setSidebarToggle}/>
+        <Main sidebarToggle={sidebarToggle}/>
+   </div>
+   )
+ }
 
 
 export default App;
 
+ 

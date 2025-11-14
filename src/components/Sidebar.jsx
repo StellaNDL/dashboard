@@ -1,30 +1,65 @@
 import React from 'react'
-import { FaThLarge } from "react-icons/fa";
-import { FaChartLine } from "react-icons/fa";
-import { GrTransaction } from "react-icons/gr";
-import { FaWallet } from "react-icons/fa";
-import { IoMdMail } from "react-icons/io";
-import { IoMdSettings } from "react-icons/io";
-import { IoLogOut } from "react-icons/io5";
+import { LuLayoutDashboard } from "react-icons/lu";
+import { RiPieChart2Line } from "react-icons/ri";
+import { LuWallet } from "react-icons/lu";
+import { TfiWallet } from "react-icons/tfi";
+import { MdOutlineMailOutline } from "react-icons/md";
+import { IoSettingsOutline } from "react-icons/io5";
+import { TbLogout2 } from "react-icons/tb";
 
-const Sidebar = () => (
-    <div bg-white className="fixed h-screen"> 
- <div className="bg-gray-200 w-64 h-screen shadow">
-    <h1 className="text-xl font-bold p-4 flex justify-center">CryptX</h1>
-    <br />
-    <div  className="text-gray-600 p-4 flex">
-    <ul>
-      <li className="text-blue-500 flex gap-3 m-2 p-2"><div><FaThLarge /></div> Overview •</li>
-      <li className="flex gap-3 m-2 p-2"><div><FaChartLine /></div> Chart</li>
-      <li className="flex gap-3 m-2 p-2"><div><GrTransaction /></div> Transactions</li>
-      <li className="flex gap-3 m-2 p-2"><div><FaWallet /></div> Wallet</li>
-      <li className="flex gap-3 m-2 p-2"><div><IoMdMail /></div> Mailbox</li>
-      <li className="flex gap-3 m-2 p-2"><div><IoMdSettings /></div> Settings</li>
-      <li className="flex gap-3 m-2 p-2"><div><IoLogOut /></div> Logout</li>
-    </ul>
-    </div>
-  </div>
-  </div>
-);
+const Sidebar = ({sidebarToggle}) => {
+  return (
+    <div className={`${sidebarToggle? " hidden " : " block "}w-64 bg-stone-100 fixed h-full px-4 py-2`}>
+      <div className='my-2 mb-4'>
+        <h1 className='text-2xl text-black font-bold'>CryptX</h1>
+      </div>
+      <hr />
+      <ul className='mt-3 text-gray-400 font-bold'>
+        <li className='mb-2 rounded hover:shadow hover:bg-gray-300 py-2'>
+          <a href="" className='px-3 text-blue-500'>
+            <LuLayoutDashboard className='inline-block w-6 h-6 mr-2 -mt-2'></LuLayoutDashboard>
+          Overview  •
+          </a>
+        </li>
+        <li className='mb-2 rounded hover:shadow hover:bg-gray-300 py-2'>
+          <a href="" className='px-3'>
+            <RiPieChart2Line className='inline-block w-6 h-6 mr-2 -mt-2'></RiPieChart2Line>
+          Chart
+          </a>
+        </li>
+        <li className='mb-2 rounded hover:shadow hover:bg-gray-300 py-2'>
+          <a href="" className='px-3'>
+            <LuWallet className='inline-block w-6 h-6 mr-2 -mt-2'></LuWallet>
+          Transactions
+          </a>
+        </li>
+        <li className='mb-2 rounded hover:shadow hover:bg-gray-300 py-2'>
+          <a href="" className='px-3'>
+            <TfiWallet className='inline-block w-6 h-6 mr-2 -mt-2'></TfiWallet>
+          Wallet
+          </a>
+        </li>
+        <li className='mb-2 rounded hover:shadow hover:bg-gray-300 py-2'>
+          <a href="" className='px-3'>
+            <MdOutlineMailOutline className='inline-block w-6 h-6 mr-2 -mt-2'></MdOutlineMailOutline>
+          Mailbox
+          </a>
+        </li>
+        <li className='mb-2 rounded hover:shadow hover:bg-gray-300 py-2'>
+          <a href="" className='px-3'>
+            <IoSettingsOutline className='inline-block w-6 h-6 mr-2 -mt-2'></IoSettingsOutline>
+          Settings
+          </a>
+        </li>
+        <li className='mb-2 rounded hover:shadow hover:bg-gray-300 py-2'>
+          <a href="" className='px-3'>
+            <TbLogout2 className='inline-block w-6 h-6 mr-2 -mt-2'></TbLogout2>
+          Logout
+          </a>
+        </li>
+      </ul>
+      </div>
+  )
+}
 
-export default Sidebar;
+export default Sidebar
