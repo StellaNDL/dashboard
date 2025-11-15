@@ -1,4 +1,5 @@
 import React from 'react'
+import { SiLoopback } from "react-icons/si";
 import { LuLayoutDashboard } from "react-icons/lu";
 import { RiPieChart2Line } from "react-icons/ri";
 import { LuWallet } from "react-icons/lu";
@@ -11,7 +12,7 @@ const Sidebar = ({sidebarToggle}) => {
   return (
     <div className={`${sidebarToggle? " hidden " : " block "}w-64 bg-stone-100 fixed h-full px-4 py-2`}>
       <div className='my-2 mb-4'>
-        <h1 className='text-2xl text-black font-bold'>CryptX</h1>
+        <h1 className=' flex text-2xl text-black font-bold'><SiLoopback className='w-8 h-8 text-blue-600'/>CryptX</h1>
       </div>
       <hr />
       <ul className='mt-3 text-gray-400 font-bold'>
